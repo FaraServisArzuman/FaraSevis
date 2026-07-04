@@ -335,3 +335,61 @@ function showModel(name){
 
 </body>
 </html>
+<section class="container">
+
+  <h2 class="section-title">Maşın Markaları</h2>
+
+  <div class="cards">
+
+    <div class="card" onclick="openCar('mercedes')">
+      <h3>Mercedes</h3>
+    </div>
+
+    <div class="card" onclick="openCar('bmw')">
+      <h3>BMW</h3>
+    </div>
+
+    <div class="card" onclick="openCar('audi')">
+      <h3>Audi</h3>
+    </div>
+
+  </div>
+</section>
+<section class="container" id="carBox" style="display:none;">
+
+  <h2 class="section-title" id="carTitle"></h2>
+
+  <img id="carImg" style="width:100%;max-width:500px;border-radius:10px;margin:20px 0;">
+
+  <div class="card">
+    <h3>Fara Polirovka</h3>
+    <p>Qiymət: 25 - 40 AZN</p>
+  </div>
+
+</section>
+<script>
+function openCar(car){
+
+  document.getElementById("carBox").style.display = "block";
+
+  if(car === "mercedes"){
+    document.getElementById("carTitle").innerText = "Mercedes Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/7v3Z8Qm.jpg";
+  }
+
+  if(car === "bmw"){
+    document.getElementById("carTitle").innerText = "BMW Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/2R3QZ5h.jpg";
+  }
+
+  if(car === "audi"){
+    document.getElementById("carTitle").innerText = "Audi Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/9gJ5k3F.jpg";
+  }
+
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+</script>
