@@ -393,3 +393,185 @@ function openCar(car){
   window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
 </script>
+[21:17, 2026-07-04] besereliyev25: <!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<title>Test Menu</title>
+
+<style>
+body{font-family:Arial;background:#111;color:white;text-align:center;}
+.card{background:#222;padding:20px;margin:10px;cursor:pointer;border-radius:10px;}
+.container{margin-top:20px;}
+</style>
+
+</head>
+<body>
+
+<h1>Maşın Markaları</h1>
+
+<div class="card" onclick="openBrand()">Mercedes</div>
+
+<div id="mercedes" class="container" style="display:none;">
+  <h2>Mercedes modelləri</h2>
+
+  <div class="card" onclick="showModel('190')">190</div>
+  <div class="card" onclick="showModel('w210')">W210</div>
+</div>
+
+<div id="model" class="container" style="display:none;">
+  <h2 id="title"></h2>
+  <p>Fara polirovka: 20 AZN</p>
+  <p>LED təmir: 30 AZN</p>
+</div>
+
+<script>
+function openBrand(){
+  document.getElementById("mercedes").style.display = "block";
+}
+
+function showModel(name){
+  document.getElementById("model").style.display = "block";
+  document.getElementById("title").innerText = "Mercedes " + name;
+}
+</script>
+
+</body>
+</html>
+[21:24, 2026-07-04] besereliyev25: <section class="container">
+
+  <h2 class="section-title">Maşın Markaları</h2>
+
+  <div class="cards">
+
+    <div class="card" onclick="openCar('mercedes')">
+      <h3>Mercedes</h3>
+    </div>
+
+    <div class="card" onclick="openCar('bmw')">
+      <h3>BMW</h3>
+    </div>
+
+    <div class="card" onclick="openCar('audi')">
+      <h3>Audi</h3>
+    </div>
+
+  </div>
+</section>
+[21:24, 2026-07-04] besereliyev25: <section class="container" id="carBox" style="display:none;">
+
+  <h2 class="section-title" id="carTitle"></h2>
+
+  <img id="carImg" style="width:100%;max-width:500px;border-radius:10px;margin:20px 0;">
+
+  <div class="card">
+    <h3>Fara Polirovka</h3>
+    <p>Qiymət: 25 - 40 AZN</p>
+  </div>
+
+</section>
+[21:25, 2026-07-04] besereliyev25: <script>
+function openCar(car){
+
+  document.getElementById("carBox").style.display = "block";
+
+  if(car === "mercedes"){
+    document.getElementById("carTitle").innerText = "Mercedes Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/7v3Z8Qm.jpg";
+  }
+
+  if(car === "bmw"){
+    document.getElementById("carTitle").innerText = "BMW Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/2R3QZ5h.jpg";
+  }
+
+  if(car === "audi"){
+    document.getElementById("carTitle").innerText = "Audi Fara Servis";
+    document.getElementById("carImg").src =
+      "https://i.imgur.com/9gJ5k3F.jpg";
+  }
+
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+</script>
+[21:36, 2026-07-04] besereliyev25: <section class="container">
+
+  <h2 class="section-title">Maşın Markaları</h2>
+
+  <div class="cards">
+
+    <div class="card" onclick="openBrand('mercedes')">
+      Mercedes
+    </div>
+
+    <div class="card" onclick="openBrand('bmw')">
+      BMW
+    </div>
+
+    <div class="card" onclick="openBrand('audi')">
+      Audi
+    </div>
+
+  </div>
+
+</section>
+<section class="container" id="brandBox" style="display:none;">
+
+  <h2 class="section-title" id="brandTitle"></h2>
+
+  <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+
+    <div class="card">
+      <h3>ƏVVƏL</h3>
+      <img id="beforeImg" style="width:100%;border-radius:10px;">
+    </div>
+
+    <div class="card">
+      <h3>SONRA</h3>
+      <img id="afterImg" style="width:100%;border-radius:10px;">
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Qiymət</h3>
+    <p id="priceText"></p>
+  </div>
+
+</section>
+<script>
+function openBrand(brand){
+
+  document.getElementById("brandBox").style.display = "block";
+
+  if(brand === "mercedes"){
+    document.getElementById("brandTitle").innerText = "Mercedes Fara Servis";
+
+    document.getElementById("beforeImg").src = "mercedes-before.jpg";
+    document.getElementById("afterImg").src = "mercedes-after.jpg";
+
+    document.getElementById("priceText").innerText = "Fara Polirovka: 25-40 AZN";
+  }
+
+  if(brand === "bmw"){
+    document.getElementById("brandTitle").innerText = "BMW Fara Servis";
+
+    document.getElementById("beforeImg").src = "bmw-before.jpg";
+    document.getElementById("afterImg").src = "bmw-after.jpg";
+
+    document.getElementById("priceText").innerText = "Fara Polirovka: 30-50 AZN";
+  }
+
+  if(brand === "audi"){
+    document.getElementById("brandTitle").innerText = "Audi Fara Servis";
+
+    document.getElementById("beforeImg").src = "audi-before.jpg";
+    document.getElementById("afterImg").src = "audi-after.jpg";
+
+    document.getElementById("priceText").innerText = "Fara Polirovka: 35-55 AZN";
+  }
+
+}
+</script>
