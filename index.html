@@ -290,3 +290,48 @@ html{
   </div>
 
 </section>
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<title>Test Menu</title>
+
+<style>
+body{font-family:Arial;background:#111;color:white;text-align:center;}
+.card{background:#222;padding:20px;margin:10px;cursor:pointer;border-radius:10px;}
+.container{margin-top:20px;}
+</style>
+
+</head>
+<body>
+
+<h1>Maşın Markaları</h1>
+
+<div class="card" onclick="openBrand()">Mercedes</div>
+
+<div id="mercedes" class="container" style="display:none;">
+  <h2>Mercedes modelləri</h2>
+
+  <div class="card" onclick="showModel('190')">190</div>
+  <div class="card" onclick="showModel('w210')">W210</div>
+</div>
+
+<div id="model" class="container" style="display:none;">
+  <h2 id="title"></h2>
+  <p>Fara polirovka: 20 AZN</p>
+  <p>LED təmir: 30 AZN</p>
+</div>
+
+<script>
+function openBrand(){
+  document.getElementById("mercedes").style.display = "block";
+}
+
+function showModel(name){
+  document.getElementById("model").style.display = "block";
+  document.getElementById("title").innerText = "Mercedes " + name;
+}
+</script>
+
+</body>
+</html>
